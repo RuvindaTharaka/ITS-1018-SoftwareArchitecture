@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="1000.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddCustomerController">
+   <children>
+      <Rectangle arcHeight="10.0" arcWidth="10.0" height="80.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="860.0">
+         <fill>
+            <LinearGradient endX="0.0728155339805825" endY="0.4417475728155339" startX="0.616504854368932" startY="0.03883495145631066">
+               <stops>
+                  <Stop color="#1598d6" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label alignment="CENTER" layoutX="282.0" layoutY="5.0" prefHeight="71.0" prefWidth="301.0" text="ADD CUSTOMER" textAlignment="CENTER" textFill="#fff2f2">
+         <font>
+            <Font name="Gill Sans Ultra Bold" size="29.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="11.0" layoutY="539.0" prefHeight="454.0" prefWidth="840.0">
+         <children>
+            <TableView fx:id="tblCustomers" layoutX="1.0" prefHeight="447.0" prefWidth="839.0">
+               <columns>
+                  <TableColumn fx:id="colCusID" prefWidth="86.0" text="Cust ID" />
+                  <TableColumn fx:id="colCusTitle" prefWidth="90.0" text="Title" />
+                  <TableColumn fx:id="colCusName" prefWidth="199.0" text="Name" />
+                  <TableColumn fx:id="colCusAddress" prefWidth="322.0" text="Address" />
+                  <TableColumn fx:id="colCusContact" prefWidth="140.0" text="Contact" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="btnAdd" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="725.0" layoutY="477.0" onAction="#addCustomerOnAction" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: #36fb00;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+      <ImageView fitHeight="58.0" fitWidth="70.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#navigateHome" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/photos/home-icon.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtCusID" layoutX="30.0" layoutY="134.0" onKeyReleased="#textFields_Key_Released" prefHeight="42.0" prefWidth="803.0" promptText="C001">
+         <font>
+            <Font name="Goudy Old Style Bold" size="23.0" />
+         </font>
+      </TextField>
+      <Label layoutX="30.0" layoutY="182.0" prefHeight="19.0" prefWidth="189.0" style="-fx-background-color: white;" text="Customer Title ">
+         <font>
+            <Font name="Goudy Old Style Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCusTitle" layoutX="29.0" layoutY="206.0" onKeyReleased="#textFields_Key_Released" prefHeight="42.0" prefWidth="803.0" promptText="Mr.">
+         <font>
+            <Font name="Goudy Old Style Bold" size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtCusName" layoutX="30.0" layoutY="278.0" onKeyReleased="#textFields_Key_Released" prefHeight="42.0" prefWidth="803.0" promptText="Amal Perera">
+         <font>
+            <Font name="Goudy Old Style Bold" size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtCusAddress" layoutX="29.0" layoutY="350.0" onKeyReleased="#textFields_Key_Released" prefHeight="42.0" prefWidth="803.0" promptText="Horana">
+         <font>
+            <Font name="Goudy Old Style Bold" size="23.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtCusContact" layoutX="29.0" layoutY="422.0" onAction="#enableBtnAdd" onKeyReleased="#textFields_Key_Released" prefHeight="42.0" prefWidth="803.0" promptText="071-4146019">
+         <font>
+            <Font name="Goudy Old Style Bold" size="23.0" />
+         </font>
+      </TextField>
+      <Label layoutX="30.0" layoutY="254.0" prefHeight="19.0" prefWidth="189.0" style="-fx-background-color: white;" text="Customer Name">
+         <font>
+            <Font name="Goudy Old Style Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="110.0" prefHeight="19.0" prefWidth="189.0" style="-fx-background-color: white;" text="Customer ID">
+         <font>
+            <Font name="Goudy Old Style Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="326.0" prefHeight="19.0" prefWidth="189.0" style="-fx-background-color: white;" text="Customer Address">
+         <font>
+            <Font name="Goudy Old Style Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="398.0" prefHeight="19.0" prefWidth="189.0" style="-fx-background-color: white;" text="Customer Contact">
+         <font>
+            <Font name="Goudy Old Style Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

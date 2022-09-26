@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="1000.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageItemController">
+   <children>
+      <Rectangle arcHeight="10.0" arcWidth="10.0" height="80.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="860.0">
+         <fill>
+            <LinearGradient endX="0.0728155339805825" endY="0.4417475728155339" startX="0.616504854368932" startY="0.03883495145631066">
+               <stops>
+                  <Stop color="#1598d6" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="58.0" fitWidth="70.0" layoutX="22.0" layoutY="11.0" onMouseClicked="#navigateHome" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/photos/home-icon.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="280.0" layoutY="5.0" prefHeight="71.0" prefWidth="301.0" text="Manage Item" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Gill Sans Ultra Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="120.0" prefHeight="19.0" prefWidth="189.0" style="-fx-background-color: white;" text="ItemCode">
+         <font>
+            <Font name="Goudy Old Style Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtItemCode" layoutX="40.0" layoutY="144.0" onKeyReleased="#textFields_Key_Released" prefHeight="42.0" prefWidth="803.0" promptText="I001">
+         <font>
+            <Font name="Goudy Old Style Bold" size="23.0" />
+         </font>
+      </TextField>
+      <Label layoutX="40.0" layoutY="194.0" prefHeight="19.0" prefWidth="189.0" style="-fx-background-color: white;" text="Description">
+         <font>
+            <Font name="Goudy Old Style Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDescription" layoutX="40.0" layoutY="218.0" onKeyReleased="#textFields_Key_Released" prefHeight="42.0" prefWidth="803.0" promptText="Rice">
+         <font>
+            <Font name="Goudy Old Style Bold" size="23.0" />
+         </font>
+      </TextField>
+      <Label layoutX="40.0" layoutY="269.0" prefHeight="19.0" prefWidth="189.0" style="-fx-background-color: white;" text="Pack Size">
+         <font>
+            <Font name="Goudy Old Style Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPackSize" layoutX="40.0" layoutY="293.0" onKeyReleased="#textFields_Key_Released" prefHeight="42.0" prefWidth="803.0" promptText="12">
+         <font>
+            <Font name="Goudy Old Style Bold" size="23.0" />
+         </font>
+      </TextField>
+      <Label layoutX="40.0" layoutY="344.0" prefHeight="19.0" prefWidth="189.0" style="-fx-background-color: white;" text="Unit Price">
+         <font>
+            <Font name="Goudy Old Style Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUnitPrice" layoutX="40.0" layoutY="368.0" onKeyReleased="#textFields_Key_Released" prefHeight="42.0" prefWidth="803.0" promptText="10.00">
+         <font>
+            <Font name="Goudy Old Style Bold" size="23.0" />
+         </font>
+      </TextField>
+      <Label layoutX="40.0" layoutY="422.0" prefHeight="19.0" prefWidth="189.0" style="-fx-background-color: white;" text="Qty On Hand">
+         <font>
+            <Font name="Goudy Old Style Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtQtyOnHand" layoutX="40.0" layoutY="446.0" onAction="#enableAddBtn" onKeyReleased="#textFields_Key_Released" prefHeight="42.0" prefWidth="803.0" promptText="10">
+         <font>
+            <Font name="Goudy Old Style Bold" size="23.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="btnAdd" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="359.0" layoutY="505.0" onAction="#addItemOnAction" prefHeight="46.0" prefWidth="130.0" style="-fx-background-color: #36fb00;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="536.0" layoutY="505.0" onAction="#updateItemOnAction" prefHeight="46.0" prefWidth="130.0" style="-fx-background-color: #f2ff00;" text="Update" textFill="#fcfcfc">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="713.0" layoutY="505.0" onAction="#deleteItemOnAction" prefHeight="46.0" prefWidth="130.0" style="-fx-background-color: #ff0000;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+      <TableView fx:id="tblItems" layoutX="40.0" layoutY="589.0" prefHeight="397.0" prefWidth="803.0">
+        <columns>
+          <TableColumn fx:id="colItemCode" prefWidth="107.0" text="Item Code" />
+          <TableColumn fx:id="colDescription" prefWidth="270.0" text="Description" />
+            <TableColumn fx:id="colPackSize" prefWidth="110.0" text="Pack Size" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="184.0" text="Unit Price" />
+            <TableColumn fx:id="colQtyOnHand" prefWidth="129.0" text="Qty On Hand" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

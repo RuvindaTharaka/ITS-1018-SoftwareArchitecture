@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SalesReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4ae8a7f1-78c7-4e14-9528-03fa7004d0c1">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT cusID, COUNT(cusID) FROM Orders GROUP BY cusID;]]>
+	</queryString>
+	<field name="cusID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cusID"/>
+		<property name="com.jaspersoft.studio.field.label" value="cusID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COUNT(cusID)" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="COUNT(cusID)"/>
+		<property name="com.jaspersoft.studio.field.label" value="COUNT(cusID)"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="447" splitType="Stretch">
+			<barChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="0" width="550" height="447" uuid="8cddf6d6-3041-4ec5-ae9c-1c1d69cd0042"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset resetType="Report"/>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{cusID}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{cusID}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{COUNT(cusID)}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

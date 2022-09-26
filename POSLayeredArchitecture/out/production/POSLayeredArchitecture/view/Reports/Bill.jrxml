@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Bill" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="72500f88-77ca-494e-a5fc-095fbc85b444">
+	<parameter name="Total" class="java.lang.Double">
+		<defaultValueExpression><![CDATA[10.0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Amount" class="java.lang.Double"/>
+	<parameter name="Balance" class="java.lang.Double"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="itemCode" class="java.lang.String"/>
+	<field name="description" class="java.lang.String"/>
+	<field name="qtyOnHand" class="java.lang.Integer"/>
+	<field name="unitPrice" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement key="" mode="Opaque" x="-20" y="-20" width="595" height="60" forecolor="#1C1716" backcolor="#B0A9A9" uuid="a1bf10a0-85a5-4168-b2fd-87c927bbef0e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bauhaus 93" size="37"/>
+				</textElement>
+				<text><![CDATA[ABC Company]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="91" splitType="Stretch">
+			<staticText>
+				<reportElement x="168" y="6" width="218" height="30" uuid="ea89db21-bab9-4b37-b95b-360a7bdb26fd"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[No.119, Panadura Road,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="42" width="80" height="26" uuid="b08b29c7-8dfc-40d6-a16d-b1f3efc251f8"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Horana.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="10" width="130" height="30" uuid="0a56dc83-41d9-41c2-88ef-27dd8a9c3247"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[011-2263924]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="155" height="30" uuid="59ec394d-dcb1-4e07-9a7a-964cfbde4cd0"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[ABCpvt@gmail.com]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="390" y="40" width="167" height="30" uuid="a0295c65-8297-4ee5-8df2-2631104a65b0"/>
+				<textElement>
+					<font fontName="Arial Black" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="80" width="561" height="5" uuid="2199fe1d-9f0b-409e-ba44-d67789ce0336"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="141" height="40" uuid="cff84dce-3090-410c-8917-c47068cb1d6a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9da2361-5542-4794-97b4-89fefd46b122"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Berlin Sans FB Demi" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="10" width="138" height="40" uuid="19275485-dc37-4b89-8552-ada6959ef034">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d6c2d0f8-293b-42a9-9a0d-128c86769fe7"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Berlin Sans FB Demi" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="10" width="138" height="40" uuid="3e8705f6-76e3-4bfb-b8fa-86aade6e079d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3363f7e6-710f-4b22-8c99-a1abccbad907"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Berlin Sans FB Demi" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="10" width="138" height="40" uuid="36b2869a-323a-4045-82b5-11c1d9ed3328">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a96103b6-159c-4470-9d51-27f7ac3b6e8d"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Berlin Sans FB Demi" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unit Price]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="72" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<textField textAdjust="StretchHeight">
+				<reportElement key="" x="0" y="0" width="141" height="72" uuid="7da187f8-0954-48c8-8725-0ea310accd45">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9da2361-5542-4794-97b4-89fefd46b122"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{itemCode}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement key="" x="141" y="0" width="138" height="72" uuid="da27cd46-0687-465d-ad91-aba6bff69e97">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d6c2d0f8-293b-42a9-9a0d-128c86769fe7"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="139" height="72" uuid="8fc1d62f-7ecd-4ee2-81db-e08d00ebaf22">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9b772e95-253a-457c-8f98-458c0b43a4e7"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qtyOnHand}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="418" y="0" width="138" height="72" uuid="477d132f-14fc-4184-8d76-a22025d2972d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="db81d5fe-b736-4568-8881-497bc0473a81"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unitPrice}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="235">
+			<staticText>
+				<reportElement x="31" y="92" width="100" height="30" uuid="2ee5d32b-a709-4002-b489-cfab0828fe24"/>
+				<textElement>
+					<font fontName="Bauhaus 93" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="140" width="100" height="30" uuid="a976f665-85f0-476b-b2fb-c5d2c0f4d8cd"/>
+				<textElement>
+					<font fontName="Bauhaus 93" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balance]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="50" width="160" height="30" uuid="38ad7c40-4fb8-4d17-bdbc-3c470801cb84"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="31" y="50" width="100" height="30" uuid="e7333f37-5d06-458a-91fb-1fbe523d5e32"/>
+				<textElement>
+					<font fontName="Bauhaus 93" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Net Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="90" width="160" height="30" uuid="376f2719-46bf-4be1-b506-3863b547eb9c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="140" width="160" height="30" uuid="ae955767-fe97-41c9-bb59-5bc2f316b290"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Balance}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="50">
+			<staticText>
+				<reportElement x="213" y="10" width="129" height="30" uuid="7f2d82cc-d895-4adb-a2ac-e95f4f281244"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bauhaus 93" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[THANK YOU!]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
